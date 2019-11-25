@@ -19,6 +19,10 @@ namespace TokenAuthenticationWithAspAngular.Controllers
     public class LoginController : ControllerBase
     {
         private IConfiguration _config;
+        public LoginController(IConfiguration config)
+        {
+            _config = config;
+        }
         [HttpPost]
         public IActionResult Login([FromBody]UserModel login)
         {
